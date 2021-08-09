@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,29 +15,53 @@
   </style>
 </head>
 <body>
+  <div class="card">
+    <section class="preenchimento">
 
-  Bill
+      <div class="conta">
+        <h1 class="tit-conta">Bill</h1>
+        <div class="input-container">
+          <img src="images/icon-dollar.svg" alt="">
+          <input class="conta-input valor-conta" type="text" name="" value="">
+        </div>
+      </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <div class="tip">
+        <h1 class="tit-conta">Select tip %</h1>
+        <div class="porcentagens">
+          <button class="bt-porcento" type="button" name="button" value="5%"></button>
+          <button class="bt-porcento" type="button" name="button" value="10%"></button>
+          <button class="bt-porcento" type="button" name="button" value="15%"></button>
+          <button class="bt-porcento" type="button" name="button" value="25%"></button>
+          <button class="bt-porcento" type="button" name="button" value="50%"></button>
+          <input class="conta-input tb-custom" type="text" name="" value="CUSTOM">
+        </div>
+      </div>
 
-  Number of People
+      <div class="num-pessoas">
+        <h1 class="tit-conta">Number of People</h1>
+        <div class="input-container">
+          <img src="images/icon-person.svg" alt="">
+          <input class="conta-input valor-pessoas" type="text" name="" value="">
+        </div>
+      </div>
+    </section>
+    <section class="resultado">
+      <div class="valor-pagar">
 
-  Tip Amount
-  / person
+      </div>
+      <div class="valor-pagar">
 
-  Total
-  / person
+      </div>
+      <button type="button" name="reset"></button>
+    </section>
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  </div>
+
+
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
