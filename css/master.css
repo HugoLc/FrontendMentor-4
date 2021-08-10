@@ -29,11 +29,14 @@ html, body{
 .preenchimento, .resultado{
   width: calc(50% - 25px);
 }
-
+/*-----------------------*/
 .preenchimento{
   background: pink;
 }
 
+
+
+/*-----------------------*/
 .resultado{
   background: hsl(183, 100%, 15%);
   width: calc(50% - 105px);
@@ -43,7 +46,7 @@ html, body{
 }
 
 .valor-pagar{
-  margin-bottom: 1px;
+  margin-bottom: 60px;
   display: flex;
   justify-content: space-between;
   align-content: center;
