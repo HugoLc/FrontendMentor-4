@@ -1,0 +1,47 @@
+html, body{
+  box-sizing: border-box;
+  overflow: hidden;
+  background: hsl(185, 41%, 84%);
+}
+
+.tit-splitter{
+  display: inline-block;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card{
+  height: calc(47% - 70px);
+  width: calc(64% - 70px);
+  background: green;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  padding: 35px;
+}
+
+.preenchimento, .resultado{
+  width: calc(50% - 25px);
+}
+
+.preenchimento{
+  background: pink;
+}
+
+.resultado{
+  background: yellow;
+}
+
+
+footer{
+  width: 100%;
+  margin-bottom: 1%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
