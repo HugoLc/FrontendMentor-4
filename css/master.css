@@ -15,7 +15,7 @@ html, body{
 .card{
   height: calc(47% - 70px);
   width: calc(64% - 70px);
-  background: green;
+  background: hsl(0, 0%, 100%);
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -23,6 +23,7 @@ html, body{
   top: 50%;
   transform: translate(-50%,-50%);
   padding: 35px;
+  border-radius: 20px;
 }
 
 .preenchimento, .resultado{
