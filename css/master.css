@@ -39,8 +39,30 @@ html, body{
   width: calc(50% - 105px);
   padding: 40px;
   border-radius: 20px;
+  position: relative;
 }
 
+.valor-pagar{
+  margin-bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.span-preco{
+  font-size: 40px;
+}
+
+.bt-reset{
+  position: absolute;
+  bottom: 40px;
+  width: calc(100% - 80px);
+  padding: 8px 0;
+  background: #26c2ad;
+  border: none;
+  border-radius: 5px;
+  opacity: 0.2;
+}
 
 footer{
   width: 100%;
