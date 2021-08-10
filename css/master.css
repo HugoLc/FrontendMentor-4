@@ -31,7 +31,7 @@ html, body{
 }
 /*-----------------------*/
 .preenchimento{
-  background: pink;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -61,15 +61,43 @@ html, body{
 }
 
 .conta{
-  background: cyan;
+
 }
 
 .tip{
-  background: green;
+
+}
+
+.porcentagens{
+  display: grid;
+  grid-template-columns: 33.3%  33.3% 33.3%;
+  grid-template-rows: 1fr 1fr;
+  /* grid-gap: 15px; */
+  grid-g
+}
+
+.bt-porcento, .tb-custom{
+  padding: 10px 0;
+  font-size: 1.1em;
+  margin: 7.5px;
+}
+
+.bt-porcento:nth-child(1), .bt-porcento:nth-child(4){
+  margin-left: 0;
+}
+
+.bt-porcento:nth-child(3), .tb-custom{
+  margin-right: 0;
+}
+
+.bt-porcento{
+  border: none;
+  border-radius: 4px;
+  background: hsl(183, 100%, 15%);
 }
 
 .num-pessoas{
-  background: yellow;
+
 }
 
 /*-----------------------*/
