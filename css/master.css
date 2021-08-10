@@ -35,7 +35,10 @@ html, body{
 }
 
 .resultado{
-  background: yellow;
+  background: hsl(183, 100%, 15%);
+  width: calc(50% - 105px);
+  padding: 40px;
+  border-radius: 20px;
 }
 
 
