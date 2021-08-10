@@ -32,9 +32,45 @@ html, body{
 /*-----------------------*/
 .preenchimento{
   background: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.input-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 12px;
+  /* background: purple; */
+}
 
+.tit-conta{
+  margin-top: 1em;
+}
+
+.conta-input{
+  text-align: right;
+  background: none;
+  border: none;
+}
+
+.conta-input:focus{
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+.conta{
+  background: cyan;
+}
+
+.tip{
+  background: green;
+}
+
+.num-pessoas{
+  background: yellow;
+}
 
 /*-----------------------*/
 .resultado{
