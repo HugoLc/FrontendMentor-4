@@ -7,6 +7,8 @@ html, body{
   height: 100vh;
 }
 
+
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -15,6 +17,10 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+input{
+  color: hsl(183, 100%, 15%);
 }
 
 .tit-splitter{
@@ -124,7 +130,6 @@ input[type=number] {
 .tb-custom{
   font-weight: bold;
   font-size: 24px;
-  color: hsl(186, 14%, 43%);
   background: hsl(189, 41%, 97%);
   border-radius: 5px;
   text-align: center;
@@ -175,6 +180,7 @@ input[type=number] {
   border-radius: 5px;
   opacity: 0.2;
   font-family: 'Space Mono', monospace;
+  font-weight: bold;
 }
 
 footer{
