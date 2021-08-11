@@ -2,18 +2,19 @@ html, body{
   box-sizing: border-box;
   overflow: hidden;
   background: hsl(185, 41%, 84%);
+  font-family: 'Space Mono', monospace;
 }
 
 .tit-splitter{
   display: inline-block;
   position: absolute;
-  top: 15%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .card{
-  height: calc(47% - 70px);
+  height: calc(450px - 70px);
   width: calc(64% - 70px);
   background: hsl(0, 0%, 100%);
   display: flex;
@@ -31,7 +32,7 @@ html, body{
 }
 /*-----------------------*/
 .preenchimento{
-  
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,24 +41,40 @@ html, body{
 .input-container{
   display: flex;
   justify-content: space-between;
-  padding: 14px 12px;
-  /* background: purple; */
+  padding: 0px 15px;
+  background: hsl(189, 41%, 97%);
+  border-radius: 5px;
+  margin: 14px 0px;
 }
 
 .tit-conta{
   margin-top: 1em;
+  font-size: 12px;
+  font-weight: 700;
+  color: hsl(184, 14%, 56%);
 }
 
 .conta-input{
   text-align: right;
   background: none;
   border: none;
+  font-weight: bold;
+
 }
 
 .conta-input:focus{
   box-shadow: 0 0 0 0;
   border: 0 none;
   outline: 0;
+}
+
+.icone{
+  object-fit: contain;
+}
+
+.conta-input, .bt-porcento{
+  font-size: 24px;
+  font-family: 'Space Mono', monospace;
 }
 
 .conta{
@@ -72,13 +89,12 @@ html, body{
   display: grid;
   grid-template-columns: 33.3%  33.3% 33.3%;
   grid-template-rows: 1fr 1fr;
-  /* grid-gap: 15px; */
-  grid-g
+  margin-top: 10px;
 }
 
 .bt-porcento, .tb-custom{
-  padding: 10px 0;
-  font-size: 1.1em;
+  padding: 4px 0;
+  /* font-size: 1.1em; */
   margin: 7.5px;
 }
 
@@ -94,6 +110,17 @@ html, body{
   border: none;
   border-radius: 4px;
   background: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+}
+
+.tb-custom{
+  font-weight: bold;
+  font-size: 24px;
+  color: hsl(186, 14%, 43%);
+  background: hsl(189, 41%, 97%);
+  border-radius: 5px;
+  text-align: center;
 }
 
 .num-pessoas{
@@ -129,6 +156,7 @@ html, body{
   border: none;
   border-radius: 5px;
   opacity: 0.2;
+  font-family: 'Space Mono', monospace;
 }
 
 footer{
