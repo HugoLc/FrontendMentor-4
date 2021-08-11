@@ -7,6 +7,16 @@ html, body{
   height: 100vh;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .tit-splitter{
   display: inline-block;
   position: absolute;
@@ -70,7 +80,7 @@ html, body{
   box-shadow: 0 0 0 0;
   border: 0 none;
   outline: 0;
-
+  text-align: right;
 }
 
 .icone{
