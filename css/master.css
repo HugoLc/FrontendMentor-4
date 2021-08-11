@@ -18,7 +18,7 @@ html, body{
 .card{
   height: calc(450px - 70px);
   width: calc(64% - 70px);
-  min-width: 666px;
+  min-width: 250px;
   max-width: 750px;
   background: hsl(0, 0%, 100%);
   display: flex;
