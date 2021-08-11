@@ -143,8 +143,23 @@ html, body{
   align-content: center;
 }
 
+.tit-resultado{
+  font-weight: bold;
+  color: hsl(0, 0%, 100%);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.person{
+  color: hsl(184, 14%, 56%);
+  font-size: 12px;
+  margin-top: 7px;
+}
+
 .span-preco{
   font-size: 40px;
+  font-weight: bold;
+  color: #26c2ad;
 }
 
 .bt-reset{
