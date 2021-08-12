@@ -79,7 +79,7 @@ input{
   background: none;
   border: none;
   font-weight: bold;
-  width: 100%;
+  width: 92%;
 }
 
 .conta-input:focus{
@@ -238,7 +238,7 @@ footer{
   }
 
   .conta-input{
-    width: 86%;
+    width: 92%;;
     text-align: right;
   }
 
