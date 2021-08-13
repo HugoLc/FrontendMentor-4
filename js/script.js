@@ -107,6 +107,6 @@ function atualizarResultado(con, tip, pes){
 }
 
 function alterarPreco(tipPessoa, totalPessoa){
-  resultTip.innerText = tipPessoa.toFixed(2);
-  resultTotal.innerText = totalPessoa.toFixed(2);
+  resultTip.innerText = '$'+tipPessoa.toFixed(2);
+  resultTotal.innerText = '$'+totalPessoa.toFixed(2);
 }
