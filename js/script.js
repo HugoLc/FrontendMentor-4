@@ -88,7 +88,14 @@ function convertToInt(valor){
 }
 
 function atualizarResultado(con, tip, pes){
-  if (con && tip && pes) {
-    console.log("nao deu null")
+  if (con && tip && pes) { //se nenhum der null
+    var tipPessoa;
+    var totalPessoa;
+
+    var contaComTip = con * ((tip / 100) + 1);
+    totalPessoa = contaComTip / pes;
+
+    var somenteTip = con * (tip / 100);
+    tipPessoa = somenteTip / pes
   }
 }
