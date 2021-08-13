@@ -6,6 +6,12 @@ var conta;
 var custom;
 var pessoas;
 
+
+function customOnFocus(){
+  customTip.placeholder = '';
+  customTip.type = 'number';
+}
+
 function customFocusOut(){
   customTip.placeholder = 'Custom';
   customTip.type = 'text';
