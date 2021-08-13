@@ -2,6 +2,9 @@ const valorConta = document.getElementById('id-valor-conta');
 const customTip = document.getElementById('id-custom-tip');
 const qtdPessoas = document.getElementById('id-qtd-pessoas');
 
+const resultTip = document.getElementById('id-result-tip');
+const resultTotal = document.getElementById('id-result-total')
+
 var conta;
 var tip;
 var pessoas;
@@ -97,5 +100,11 @@ function atualizarResultado(con, tip, pes){
 
     var somenteTip = con * (tip / 100);
     tipPessoa = somenteTip / pes
+    alterarPreco(tipPessoa, totalPessoa)
   }
+}
+
+function alterarPreco(tipPessoa, totalPessoa){
+  resultTip.innerText = tipPessoa.toFixed(2);
+  resultTotal.innerText = totalPessoa.toFixed(2);
 }
