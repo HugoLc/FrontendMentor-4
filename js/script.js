@@ -2,17 +2,19 @@ const valorConta = document.getElementById('id-valor-conta');
 const customTip = document.getElementById('id-custom-tip');
 const qtdPessoas = document.getElementById('id-qtd-pessoas');
 
+var conta;
+var custom;
+var pessoas;
 
-// qtdPessoas.onfocusout = function(){
-//   // this.placeholder = '0';
-//   var texto = qtdPessoas.value;
-//   console.log('oi');
-// }
-//
-// function checarValor(arr) {
-//   var penultimoValor = arr[arr.length - 2];
-//   console.log(penultimoValor);
-// }
+function customFocusOut(){
+  customTip.placeholder = 'Custom';
+  customTip.type = 'text';
+  texto = customTip.value;
+  custom = parseInt(texto);
+  console.log(custom);
+  texto = texto + '%';
+  customTip.value = texto;
+}
 
 function qtdPessoasFocusOut(){
   qtdPessoas.placeholder = '0';
