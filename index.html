@@ -31,7 +31,7 @@
         <h2 class="tit-conta">Bill</h2>
         <div class="input-container">
           <img class="icone" src="images/icon-dollar.svg" alt="">
-          <input id="id-valor-conta" class="conta-input valor-conta" type="number" min="0" step="1" placeholder="0" onfocusout="this.placeholder = '0'" onfocus="this.placeholder = ''">
+          <input id="id-valor-conta" class="conta-input valor-conta" type="number"  min="0" step="1" placeholder="0" onfocusout="this.placeholder = '0'" onfocus="this.placeholder = ''">
         </div>
       </div>
 
@@ -43,7 +43,7 @@
           <button class="bt-porcento" type="button" name="button" value="15%">15%</button>
           <button class="bt-porcento" type="button" name="button" value="25%">25%</button>
           <button class="bt-porcento" type="button" name="button" value="50%">50%</button>
-          <input id="id-valor-tip" class="conta-input tb-custom" type="number" name="" value="" placeholder="Custom" onfocusout="this.placeholder = 'Custom'" onfocus="this.placeholder = ''">
+          <input id="id-custom-tip" class="conta-input tb-custom" type="number" name="" value="" placeholder="Custom" onfocusout="this.placeholder = 'Custom'" onfocus="this.placeholder = ''">
         </div>
       </div>
 
@@ -51,7 +51,7 @@
         <h2 class="tit-conta">Number of People</h2>
         <div class="input-container">
           <img class="icone" src="images/icon-person.svg" alt="">
-          <input id="id-qtd-pessoas"class="conta-input valor-pessoas" type="number" placeholder="0" onfocusout="this.placeholder = '0'" onfocus="this.placeholder = '' min="0" oninput="validity.valid||(value='');">
+          <input id="id-qtd-pessoas" class="conta-input valor-pessoas" type="number" placeholder="0"  onfocusout="qtdPessoasFocusOut()" onfocus="this.placeholder = ''" min="0" >
         </div>
       </div>
     </section>
@@ -77,11 +77,10 @@
 
   </div>
 
-
-
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://github.com/HugoLc">Hugo Lindoso Correia</a>.
   </div>
+  <script src="js/script.js" charset="utf-8"></script>
 </body>
 </html>
