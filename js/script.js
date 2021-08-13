@@ -7,8 +7,9 @@ var custom;
 var pessoas;
 
 
-function contaFocusOut{
+function contaFocusOut(){
   valorConta.placeholder = '0';
+
 }
 
 
@@ -21,21 +22,35 @@ function customFocusOut(){
   customTip.placeholder = 'Custom';
   customTip.type = 'text';
   texto = customTip.value;
-  if (texto) {
+  if (texto && texto > 0) {
     custom = parseInt(texto);
-    console.log(custom);
-    texto = texto + '%';
+    texto = custom + '%';
+    customTip.value = texto;
+
+  }else if (texto < 0) {
+    custom = parseInt(texto) * (-1);
+    texto = custom + '%';
+    customTip.value = texto;
+
+  }else {
+    texto = '';
+    customTip.value = texto;
   }
-  customTip.value = texto;
+  console.log(custom);
 }
 
 function qtdPessoasFocusOut(){
   qtdPessoas.placeholder = '0';
-  if (qtdPessoas.value) {
-    qtdPessoas.value = convertToInt(qtdPessoas.value);
+  if (qtdPessoas.value && qtdPessoas.value > 0) {
     pessoas = parseInt(qtdPessoas.value);
-    console.log(pessoas);
+  }else if (qtdPessoas.value < 0) {
+    qtdPessoas.value = parseInt(qtdPessoas.value) * (-1);
+    pessoas = qtdPessoas.value;
+
+  }else {
+    qtdPessoas.value = '';
   }
+  console.log(pessoas);
 }
 
 function convertToInt(valor){
