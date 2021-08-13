@@ -3,9 +3,14 @@ const customTip = document.getElementById('id-custom-tip');
 const qtdPessoas = document.getElementById('id-qtd-pessoas');
 
 var conta;
-var custom;
+var tip;
 var pessoas;
 
+
+function contaOnFocus(){
+  valorConta.placeholder = '';
+  valorConta.value = '';
+}
 
 function contaFocusOut(){
   valorConta.placeholder = '0';
@@ -20,6 +25,7 @@ function contaFocusOut(){
     valorConta.value = conta;
   }else {
     valorConta.value = '';
+    conta = null;
   }
   console.log(conta);
 }
@@ -28,6 +34,8 @@ function contaFocusOut(){
 function customOnFocus(){
   customTip.placeholder = '';
   customTip.type = 'number';
+  customTip.placeholder = '';
+  customTip.value = '';
 }
 
 function customFocusOut(){
@@ -35,20 +43,26 @@ function customFocusOut(){
   customTip.type = 'text';
   texto = customTip.value;
   if (texto && texto > 0) {
-    custom = parseInt(texto);
-    texto = custom + '%';
+    tip = parseInt(texto);
+    texto = tip + '%';
     customTip.value = texto;
 
   }else if (texto < 0) {
-    custom = parseInt(texto) * (-1);
-    texto = custom + '%';
+    tip = parseInt(texto) * (-1);
+    texto = tip + '%';
     customTip.value = texto;
 
   }else {
     texto = '';
     customTip.value = texto;
+    tip = null;
   }
-  console.log(custom);
+  console.log(tip);
+}
+
+function qtdPessoasOnFocus(){
+  qtdPessoas.placeholder = '';
+  qtdPessoas.value = '';
 }
 
 function qtdPessoasFocusOut(){
@@ -61,12 +75,20 @@ function qtdPessoasFocusOut(){
 
   }else {
     qtdPessoas.value = '';
+    pessoas = null;
   }
   console.log(pessoas);
+  atualizarResultado(conta, tip, pessoas);
 }
 
 function convertToInt(valor){
   var num = valor;
   num = parseInt(num);
   return num;
+}
+
+function atualizarResultado(con, tip, pes){
+  if (con && tip && pes) {
+    console.log("nao deu null")
+  }
 }

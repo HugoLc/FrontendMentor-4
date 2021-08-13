@@ -31,7 +31,7 @@
         <h2 class="tit-conta">Bill</h2>
         <div class="input-container">
           <img class="icone" src="images/icon-dollar.svg" alt="">
-          <input id="id-valor-conta" class="conta-input valor-conta" type="number"  min="0" step="1" placeholder="0" onfocusout="contaFocusOut()" onfocus="this.placeholder = ''">
+          <input id="id-valor-conta" class="conta-input valor-conta" type="number"  min="0" step="1" placeholder="0" onfocusout="contaFocusOut()" onfocus="contaOnFocus()">
         </div>
       </div>
 
@@ -51,7 +51,7 @@
         <h2 class="tit-conta">Number of People</h2>
         <div class="input-container">
           <img class="icone" src="images/icon-person.svg" alt="">
-          <input id="id-qtd-pessoas" class="conta-input valor-pessoas" type="number" placeholder="0"  onfocusout="qtdPessoasFocusOut()" onfocus="this.placeholder = ''" min="0" >
+          <input id="id-qtd-pessoas" class="conta-input valor-pessoas" type="number" placeholder="0"  onfocusout="qtdPessoasFocusOut()" onfocus="qtdPessoasOnFocus()" min="0" >
         </div>
       </div>
     </section>
