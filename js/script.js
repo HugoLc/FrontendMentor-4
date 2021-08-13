@@ -31,6 +31,7 @@ function contaFocusOut(){
     conta = null;
   }
   console.log(conta);
+  atualizarResultado(conta, tip, pessoas);
 }
 
 
@@ -61,6 +62,7 @@ function customFocusOut(){
     tip = null;
   }
   console.log(tip);
+  atualizarResultado(conta, tip, pessoas);
 }
 
 function qtdPessoasOnFocus(){
