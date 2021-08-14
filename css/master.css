@@ -67,12 +67,26 @@ input{
   margin: 14px 0px;
 }
 
+.tit-zero{
+  display: flex;
+  justify-content: space-between;
+}
+
 .tit-conta{
+  display: inline-block;
   margin-top: 1em;
   font-size: 12px;
   font-weight: 700;
   color: hsl(184, 14%, 56%);
 }
+
+.zero{
+  visibility: hidden;
+  color: red;
+  font-size: 12px;
+  margin-top: 1em;
+}
+
 
 .conta-input{
   text-align: right;

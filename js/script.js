@@ -2,13 +2,9 @@ const valorConta = document.getElementById('id-valor-conta');
 const customTip = document.getElementById('id-custom-tip');
 const qtdPessoas = document.getElementById('id-qtd-pessoas');
 
-// const body = document.getElementByTagName('body');
-
-// const bt5  = document.getElementById('id-bt-5');
-// const bt10 = document.getElementById('id-bt-10');
-// const bt15 = document.getElementById('id-bt-15');
-// const bt25 = document.getElementById('id-bt-25');
-// const bt50 = document.getElementById('id-bt-50');
+const zeroConta = document.getElementById('zeroConta');
+const zeroTip = document.getElementById('zeroTip');
+const zeroPessoas = document.getElementById('zeroPessoas');
 
 const resultTip = document.getElementById('id-result-tip');
 const resultTotal = document.getElementById('id-result-total')
@@ -40,6 +36,7 @@ document.addEventListener('click', (e) =>{
 function contaOnFocus(){
   valorConta.placeholder = '';
   valorConta.value = '';
+
 }
 
 function contaFocusOut(){
@@ -67,6 +64,10 @@ function customOnFocus(){
   customTip.type = 'number';
   customTip.placeholder = '';
   customTip.value = '';
+  if (ultimoPorcento) {
+    changeStyle(ultimoPorcento);
+    ultimoPorcento = null;
+  }
 }
 
 function customFocusOut(){
@@ -101,6 +102,7 @@ function qtdPessoasFocusOut(){
   qtdPessoas.placeholder = '0';
   if (qtdPessoas.value && qtdPessoas.value > 0) {
     pessoas = parseInt(qtdPessoas.value);
+    qtdPessoas.value = pessoas;
   }else if (qtdPessoas.value < 0) {
     qtdPessoas.value = parseInt(qtdPessoas.value * (-1));
     pessoas = parseInt(qtdPessoas.value);
@@ -159,4 +161,9 @@ function getTip(num, id){
 function changeStyle(id){
   let botao = document.getElementById(id);
   botao.classList.toggle('bt-porcento-select');
+}
+
+function retornarPadrao(campo, zero){
+  zero.style.visibility = 'hidden';
+  campo.style.border = '2px solid hsl(172, 67%, 45%)'
 }

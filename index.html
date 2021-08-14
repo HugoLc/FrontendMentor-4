@@ -28,7 +28,10 @@
   <div class="card">
     <section class="preenchimento">
       <div class="conta">
-        <h2 class="tit-conta">Bill</h2>
+        <div class="tit-zero">
+          <h2 class="tit-conta">Bill</h2>
+          <span id="zero-conta" class="zero">Can't be zero</span>
+        </div>
         <div class="input-container">
           <img class="icone" src="images/icon-dollar.svg" alt="">
           <input id="id-valor-conta" class="conta-input valor-conta" type="number"  min="0" step="1" placeholder="0" onfocusout="contaFocusOut()" onfocus="contaOnFocus()">
@@ -36,7 +39,10 @@
       </div>
 
       <div class="tip">
-        <h2 class="tit-conta sel-tip">Select tip %</h2>
+        <div class="tit-zero">
+          <h2 class="tit-conta sel-tip">Select tip %</h2>
+          <span id="zero-tip" class="zero">Can't be zero</span>
+        </div>
         <div class="porcentagens">
           <button id="id-bt-5" class="bt-porcento" type="button" name="button" value="5%" onclick="getTip(5, this.id)">5%</button>
           <button id="id-bt-10" class="bt-porcento" type="button" name="button" value="10%" onclick="getTip(10, this.id)">10%</button>
@@ -48,7 +54,10 @@
       </div>
 
       <div class="num-pessoas">
-        <h2 class="tit-conta">Number of People</h2>
+        <div class="tit-zero">
+          <h2 class="tit-conta">Number of People</h2>
+          <span id="zero-pessoas" class="zero">Can't be zero</span>
+        </div>
         <div class="input-container">
           <img class="icone" src="images/icon-person.svg" alt="">
           <input id="id-qtd-pessoas" class="conta-input valor-pessoas" type="number" placeholder="0"  onfocusout="qtdPessoasFocusOut()" onfocus="qtdPessoasOnFocus()" min="0" >
