@@ -127,6 +127,14 @@ input{
   font-weight: 700;
 }
 
+.bt-porcento-select{
+  border: none;
+  border-radius: 4px;
+  background: #9fe8df;
+  color: hsl(183, 100%, 15%);
+  font-weight: 700;
+}
+
 .tb-custom{
   font-weight: bold;
   font-size: 24px;
@@ -190,8 +198,6 @@ footer{
   bottom: 0;
   text-align: center;
 }
-
-
 
 
 

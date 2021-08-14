@@ -2,12 +2,39 @@ const valorConta = document.getElementById('id-valor-conta');
 const customTip = document.getElementById('id-custom-tip');
 const qtdPessoas = document.getElementById('id-qtd-pessoas');
 
+// const body = document.getElementByTagName('body');
+
+// const bt5  = document.getElementById('id-bt-5');
+// const bt10 = document.getElementById('id-bt-10');
+// const bt15 = document.getElementById('id-bt-15');
+// const bt25 = document.getElementById('id-bt-25');
+// const bt50 = document.getElementById('id-bt-50');
+
 const resultTip = document.getElementById('id-result-tip');
 const resultTotal = document.getElementById('id-result-total')
 
 var conta;
 var tip;
 var pessoas;
+
+let ultimoPorcento;
+
+/////////arrumar numero quebrado de pessoas
+
+document.addEventListener('click', (e) =>{
+  let targetElem = e.target;
+
+  if (targetElem.id != ultimoPorcento){
+    if (targetElem.id != valorConta.id && targetElem.id != qtdPessoas.id) {
+      if (ultimoPorcento) {
+        changeStyle(ultimoPorcento);
+        tip = null;
+        ultimoPorcento = null;
+        console.log(tip);
+      }
+    }
+  }
+});
 
 
 function contaOnFocus(){
@@ -109,4 +136,27 @@ function atualizarResultado(con, tip, pes){
 function alterarPreco(tipPessoa, totalPessoa){
   resultTip.innerText = '$'+tipPessoa.toFixed(2);
   resultTotal.innerText = '$'+totalPessoa.toFixed(2);
+}
+
+function getTip(num, id){
+  customTip.value = '';
+  if (id != ultimoPorcento){
+    if (ultimoPorcento != null) {
+      changeStyle(ultimoPorcento);
+    }
+    tip = num;
+    atualizarResultado(conta, tip, pessoas);
+    changeStyle(id);
+    ultimoPorcento = id;
+    console.log(tip);
+  }else {
+    changeStyle(id);
+    tip = null;
+    console.log(tip);
+  }
+}
+
+function changeStyle(id){
+  let botao = document.getElementById(id);
+  botao.classList.toggle('bt-porcento-select');
 }
