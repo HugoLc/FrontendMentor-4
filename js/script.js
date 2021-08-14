@@ -51,6 +51,10 @@ function contaFocusOut(){
   }else if (num < 0) {
     conta = parseFloat((num * (-1)).toFixed(2));
     valorConta.value = conta;
+  }else if (valorConta.value == 0) {
+    alertarZero(valorConta, zeroConta);
+    valorConta.value = '';
+    conta = null;
   }else {
     valorConta.value = '';
     conta = null;
@@ -86,7 +90,11 @@ function customFocusOut(){
     tip = parseInt(texto) * (-1);
     texto = tip + '%';
     customTip.value = texto;
-
+  }else if (customTip.value == 0) {
+    alertarZero(customTip, zeroTip, true);
+    texto = '';
+    customTip.value = '';
+    tip = null;
   }else {
     texto = '';
     customTip.value = texto;
@@ -111,7 +119,10 @@ function qtdPessoasFocusOut(){
   }else if (qtdPessoas.value < 0) {
     qtdPessoas.value = parseInt(qtdPessoas.value * (-1));
     pessoas = parseInt(qtdPessoas.value);
-
+  }else if (qtdPessoas.value == 0) {
+    alertarZero(qtdPessoas, zeroPessoas);
+    qtdPessoas.value = '';
+    pessoas = null;
   }else {
     qtdPessoas.value = '';
     pessoas = null;
@@ -146,6 +157,7 @@ function alterarPreco(tipPessoa, totalPessoa){
 }
 
 function getTip(num, id){
+  retornarPadrao(customTip, zeroTip, false, true);
   customTip.value = '';
   if (id != ultimoPorcento){
     if (ultimoPorcento != null) {
