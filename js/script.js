@@ -2,9 +2,9 @@ const valorConta = document.getElementById('id-valor-conta');
 const customTip = document.getElementById('id-custom-tip');
 const qtdPessoas = document.getElementById('id-qtd-pessoas');
 
-const zeroConta = document.getElementById('zeroConta');
-const zeroTip = document.getElementById('zeroTip');
-const zeroPessoas = document.getElementById('zeroPessoas');
+const zeroConta = document.getElementById('zero-conta');
+const zeroTip = document.getElementById('zero-tip');
+const zeroPessoas = document.getElementById('zero-pessoas');
 
 const resultTip = document.getElementById('id-result-tip');
 const resultTotal = document.getElementById('id-result-total')
@@ -36,10 +36,11 @@ document.addEventListener('click', (e) =>{
 function contaOnFocus(){
   valorConta.placeholder = '';
   valorConta.value = '';
-
+  retornarPadrao(valorConta, zeroConta);
 }
 
 function contaFocusOut(){
+  retornarPadrao(valorConta, zeroConta, false);
   valorConta.placeholder = '0';
   var num = parseFloat(valorConta.value);
   num = num.toFixed(2);
@@ -60,6 +61,7 @@ function contaFocusOut(){
 
 
 function customOnFocus(){
+  retornarPadrao(customTip, zeroTip, true, true);
   customTip.placeholder = '';
   customTip.type = 'number';
   customTip.placeholder = '';
@@ -71,6 +73,7 @@ function customOnFocus(){
 }
 
 function customFocusOut(){
+  retornarPadrao(customTip, zeroTip, false, true);
   customTip.placeholder = 'Custom';
   customTip.type = 'text';
   texto = customTip.value;
@@ -94,11 +97,13 @@ function customFocusOut(){
 }
 
 function qtdPessoasOnFocus(){
+  retornarPadrao(qtdPessoas, zeroPessoas);
   qtdPessoas.placeholder = '';
   qtdPessoas.value = '';
 }
 
 function qtdPessoasFocusOut(){
+  retornarPadrao(qtdPessoas, zeroPessoas, false);
   qtdPessoas.placeholder = '0';
   if (qtdPessoas.value && qtdPessoas.value > 0) {
     pessoas = parseInt(qtdPessoas.value);
@@ -163,7 +168,22 @@ function changeStyle(id){
   botao.classList.toggle('bt-porcento-select');
 }
 
-function retornarPadrao(campo, zero){
+function retornarPadrao(campo, zero, focus = true, custom = false){
   zero.style.visibility = 'hidden';
-  campo.style.border = '2px solid hsl(172, 67%, 45%)'
+  if (!custom) {
+    container = campo.parentElement;
+    focus ? container.style.border = '2px solid hsl(172, 67%, 45%)' : container.style.border = 'none';
+  }else {
+    focus ? campo.style.border = '2px solid hsl(172, 67%, 45%)' : campo.style.border = 'none';
+  }
+}
+
+function alertarZero(campo, zero, custom = false){
+  zero.style.visibility = 'visible';
+  if (!custom) {
+    container = campo.parentElement;
+    container.style.border = '2px solid red';
+  }else {
+    campo.style.border = '2px solid red';
+  }
 }
