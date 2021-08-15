@@ -32,13 +32,14 @@ document.addEventListener('click', (e) =>{
   }
 });
 
-document.addEventListener('change', ()=>{
-  console.log('teve mudança');
-//  if (conta || tip || pessoas) {
-    console.log('entrei');
-    btReset.style.opacity = '1';
-//  }
-})
+//// não funcionou muito bem utilizando on change
+// document.addEventListener('change', ()=>{
+//   console.log('teve mudança');
+// //  if (conta || tip || pessoas) {
+//     console.log('entrei');
+//     btReset.style.opacity = '1';
+// //  }
+// })
 
 function contaOnFocus(){
   valorConta.placeholder = '';
@@ -171,7 +172,7 @@ function getTip(num, id){
       changeStyle(ultimoPorcento);
     }
     tip = num;
-    btReset.style.opacity = '1';
+    mudarResetButton(btReset, false);
     atualizarResultado(conta, tip, pessoas);
     changeStyle(id);
     ultimoPorcento = id;
@@ -179,6 +180,7 @@ function getTip(num, id){
   }else {
     changeStyle(id);
     tip = null;
+    mudarResetButton(btReset, true);
     console.log(tip);
   }
 }
@@ -206,6 +208,16 @@ function alertarZero(campo, zero, custom = false){
     container.style.border = '2px solid red';
   }else {
     campo.style.border = '2px solid red';
+  }
+}
+
+function mudarResetButton(button, disabled){
+  if (!disabled) { //ativar
+    button.disabled = disabled;
+    button.style.opacity = '1';
+  }else { //desativar
+    button.disabled = disabled;
+    button.style.opacity = '0.7';
   }
 }
 

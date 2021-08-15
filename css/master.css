@@ -200,9 +200,12 @@ input{
   background: #26c2ad;
   border: none;
   border-radius: 5px;
-  opacity: 0.2;
   font-family: 'Space Mono', monospace;
   font-weight: bold;
+}
+
+.bt-reset:disabled{
+  opacity: 0.5;
 }
 
 footer{
