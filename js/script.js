@@ -17,29 +17,23 @@ var pessoas;
 
 let ultimoPorcento;
 
-// document.addEventListener('click', (e) =>{
-//   let targetElem = e.target;
-//
-//   if (targetElem.id != ultimoPorcento){
-//     if (targetElem.id != valorConta.id && targetElem.id != qtdPessoas.id) {
-//       if (ultimoPorcento) {
-//         changeStyle(ultimoPorcento);
-//         tip = null;
-//         ultimoPorcento = null;
-//         console.log(tip);
-//       }
-//     }
-//   }
-// });
+valorConta.addEventListener('keypress', (evento) => {
+  if (evento.key == 'Enter') {
+    customTip.focus();
+  }
+});
 
-//// não funcionou muito bem utilizando on change
-// document.addEventListener('change', ()=>{
-//   console.log('teve mudança');
-// //  if (conta || tip || pessoas) {
-//     console.log('entrei');
-//     btReset.style.opacity = '1';
-// //  }
-// })
+customTip.addEventListener('keypress', (evento) =>{
+  if (evento.key == 'Enter') {
+    qtdPessoas.focus();
+  }
+});
+
+qtdPessoas.addEventListener('keypress', (evento)=>{
+  if (evento.key == 'Enter') {
+    btReset.focus();
+  }
+})
 
 function contaOnFocus(){
   valorConta.placeholder = '';
@@ -74,7 +68,6 @@ function contaFocusOut(){
   console.log(conta);
   atualizarResultado(conta, tip, pessoas);
 }
-
 
 function customOnFocus(){
   retornarPadrao(customTip, zeroTip, true, true);
@@ -196,6 +189,7 @@ function getTip(num, id){
     mudarResetButton(btReset, true);
     console.log(tip);
   }
+  qtdPessoas.focus();
 }
 
 function changeStyle(id){

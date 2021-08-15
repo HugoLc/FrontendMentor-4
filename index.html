@@ -34,7 +34,7 @@
         </div>
         <div class="input-container">
           <img class="icone" src="images/icon-dollar.svg" alt="">
-          <input id="id-valor-conta" class="conta-input valor-conta" type="number"  min="0" step="1" placeholder="0" onfocusout="contaFocusOut()" onfocus="contaOnFocus()">
+          <input id="id-valor-conta" class="conta-input valor-conta" name="pagamento" type="number"  min="0" step="1" placeholder="0" onfocusout="contaFocusOut()" onfocus="contaOnFocus()">
         </div>
       </div>
 
@@ -49,7 +49,7 @@
           <button id="id-bt-15" class="bt-porcento" type="button" name="button" value="15%" onclick="getTip(15, this.id)">15%</button>
           <button id="id-bt-25" class="bt-porcento" type="button" name="button" value="25%" onclick="getTip(25, this.id)">25%</button>
           <button id="id-bt-50" class="bt-porcento" type="button" name="button" value="50%" onclick="getTip(50, this.id)">50%</button>
-          <input id="id-custom-tip" class="conta-input tb-custom" type="number" name="" value="" placeholder="Custom" onfocusout="customFocusOut()" onfocus="customOnFocus()">
+          <input id="id-custom-tip" class="conta-input tb-custom" type="number" name="pagamento" value="" placeholder="Custom" onfocusout="customFocusOut()" onfocus="customOnFocus()">
         </div>
       </div>
 
@@ -60,7 +60,7 @@
         </div>
         <div class="input-container">
           <img class="icone" src="images/icon-person.svg" alt="">
-          <input id="id-qtd-pessoas" class="conta-input valor-pessoas" type="number" placeholder="0"  onfocusout="qtdPessoasFocusOut()" onfocus="qtdPessoasOnFocus()" min="0" >
+          <input id="id-qtd-pessoas" class="conta-input valor-pessoas" name="pagamento" type="number" placeholder="0"  onfocusout="qtdPessoasFocusOut()" onfocus="qtdPessoasOnFocus()" min="0" >
         </div>
       </div>
     </section>
@@ -79,7 +79,7 @@
           <h2 class="tit-resultado">Total</h2>
           <h3 class="person">/ person</h3>
         </div>
-        <span id="id-result-total"class="span-preco">$0.00</span>
+        <span id="id-result-total" class="span-preco">$0.00</span>
       </div>
       <button id="id-bt-reset" class="bt-reset" type="button" name="reset" onclick="resetAll()" disabled>RESET</button>
     </section>
