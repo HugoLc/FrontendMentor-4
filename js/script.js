@@ -7,15 +7,15 @@ const zeroTip = document.getElementById('zero-tip');
 const zeroPessoas = document.getElementById('zero-pessoas');
 
 const resultTip = document.getElementById('id-result-tip');
-const resultTotal = document.getElementById('id-result-total')
+const resultTotal = document.getElementById('id-result-total');
+
+const btReset = document.getElementById('id-bt-reset');
 
 var conta;
 var tip;
 var pessoas;
 
 let ultimoPorcento;
-
-/////////arrumar numero quebrado de pessoas
 
 document.addEventListener('click', (e) =>{
   let targetElem = e.target;
@@ -32,6 +32,13 @@ document.addEventListener('click', (e) =>{
   }
 });
 
+document.addEventListener('change', ()=>{
+  console.log('teve mudança');
+  if (conta || tip || pessoas) {
+    console.log('entrei');
+    btReset.style.opacity = '1';
+  }
+})
 
 function contaOnFocus(){
   valorConta.placeholder = '';
@@ -183,7 +190,7 @@ function changeStyle(id){
 function retornarPadrao(campo, zero, focus = true, custom = false){
   zero.style.visibility = 'hidden';
   if (!custom) {
-    container = campo.parentElement;
+    let container = campo.parentElement;
     focus ? container.style.border = '2px solid hsl(172, 67%, 45%)' : container.style.border = 'none';
   }else {
     focus ? campo.style.border = '2px solid hsl(172, 67%, 45%)' : campo.style.border = 'none';
@@ -193,9 +200,23 @@ function retornarPadrao(campo, zero, focus = true, custom = false){
 function alertarZero(campo, zero, custom = false){
   zero.style.visibility = 'visible';
   if (!custom) {
-    container = campo.parentElement;
+    let container = campo.parentElement;
     container.style.border = '2px solid red';
   }else {
     campo.style.border = '2px solid red';
   }
+}
+
+function resetAll(){
+  conta = null;
+  tip = null;
+  pessoas = null;
+  ultimoPorcento = null;
+
+  valorConta.value = '';
+  customTip.value = '';
+  qtdPessoas.value = '';
+
+  resultTip.innerText = '$0.00';
+  resultTotal.innerText = '$0.00';
 }
