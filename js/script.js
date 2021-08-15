@@ -17,20 +17,20 @@ var pessoas;
 
 let ultimoPorcento;
 
-document.addEventListener('click', (e) =>{
-  let targetElem = e.target;
-
-  if (targetElem.id != ultimoPorcento){
-    if (targetElem.id != valorConta.id && targetElem.id != qtdPessoas.id) {
-      if (ultimoPorcento) {
-        changeStyle(ultimoPorcento);
-        tip = null;
-        ultimoPorcento = null;
-        console.log(tip);
-      }
-    }
-  }
-});
+// document.addEventListener('click', (e) =>{
+//   let targetElem = e.target;
+//
+//   if (targetElem.id != ultimoPorcento){
+//     if (targetElem.id != valorConta.id && targetElem.id != qtdPessoas.id) {
+//       if (ultimoPorcento) {
+//         changeStyle(ultimoPorcento);
+//         tip = null;
+//         ultimoPorcento = null;
+//         console.log(tip);
+//       }
+//     }
+//   }
+// });
 
 //// não funcionou muito bem utilizando on change
 // document.addEventListener('change', ()=>{
@@ -55,17 +55,21 @@ function contaFocusOut(){
   num = parseFloat(num);
   if (num && num > 0) {
     conta = num;
+    mudarResetButton(btReset, false);
     valorConta.value = conta;
   }else if (num < 0) {
     conta = parseFloat((num * (-1)).toFixed(2));
+    mudarResetButton(btReset, false);
     valorConta.value = conta;
   }else if (valorConta.value == 0) {
     alertarZero(valorConta, zeroConta);
     valorConta.value = '';
     conta = null;
+    mudarResetButton(btReset, true);
   }else {
     valorConta.value = '';
     conta = null;
+    mudarResetButton(btReset, true);
   }
   console.log(conta);
   atualizarResultado(conta, tip, pessoas);
@@ -91,22 +95,27 @@ function customFocusOut(){
   texto = customTip.value;
   if (texto && texto > 0) {
     tip = parseInt(texto);
+    ultimoPorcento = customTip.id;
     texto = tip + '%';
+    mudarResetButton(btReset, false);
     customTip.value = texto;
-
   }else if (texto < 0) {
     tip = parseInt(texto) * (-1);
     texto = tip + '%';
+    ultimoPorcento = customTip.id;
+    mudarResetButton(btReset, false);
     customTip.value = texto;
   }else if (customTip.value == 0) {
     alertarZero(customTip, zeroTip, true);
     texto = '';
     customTip.value = '';
     tip = null;
+    mudarResetButton(btReset, true);
   }else {
     texto = '';
     customTip.value = texto;
     tip = null;
+    mudarResetButton(btReset, true);
   }
   console.log(tip);
   atualizarResultado(conta, tip, pessoas);
@@ -123,17 +132,21 @@ function qtdPessoasFocusOut(){
   qtdPessoas.placeholder = '0';
   if (qtdPessoas.value && qtdPessoas.value > 0) {
     pessoas = parseInt(qtdPessoas.value);
+    mudarResetButton(btReset, false);
     qtdPessoas.value = pessoas;
   }else if (qtdPessoas.value < 0) {
     qtdPessoas.value = parseInt(qtdPessoas.value * (-1));
     pessoas = parseInt(qtdPessoas.value);
+    mudarResetButton(btReset, false);
   }else if (qtdPessoas.value == 0) {
     alertarZero(qtdPessoas, zeroPessoas);
     qtdPessoas.value = '';
     pessoas = null;
+    mudarResetButton(btReset, true);
   }else {
     qtdPessoas.value = '';
     pessoas = null;
+    mudarResetButton(btReset, true);
   }
   console.log(pessoas);
   atualizarResultado(conta, tip, pessoas);
@@ -186,9 +199,11 @@ function getTip(num, id){
 }
 
 function changeStyle(id){
+  if (id != customTip.id) {
+    let botao = document.getElementById(id);
+    botao.classList.toggle('bt-porcento-select');
+  }
   ultimoPorcento = null;
-  let botao = document.getElementById(id);
-  botao.classList.toggle('bt-porcento-select');
 }
 
 function retornarPadrao(campo, zero, focus = true, custom = false){
