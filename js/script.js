@@ -34,10 +34,10 @@ document.addEventListener('click', (e) =>{
 
 document.addEventListener('change', ()=>{
   console.log('teve mudança');
-  if (conta || tip || pessoas) {
+//  if (conta || tip || pessoas) {
     console.log('entrei');
     btReset.style.opacity = '1';
-  }
+//  }
 })
 
 function contaOnFocus(){
@@ -171,6 +171,7 @@ function getTip(num, id){
       changeStyle(ultimoPorcento);
     }
     tip = num;
+    btReset.style.opacity = '1';
     atualizarResultado(conta, tip, pessoas);
     changeStyle(id);
     ultimoPorcento = id;
@@ -183,6 +184,7 @@ function getTip(num, id){
 }
 
 function changeStyle(id){
+  ultimoPorcento = null;
   let botao = document.getElementById(id);
   botao.classList.toggle('bt-porcento-select');
 }
@@ -211,7 +213,7 @@ function resetAll(){
   conta = null;
   tip = null;
   pessoas = null;
-  ultimoPorcento = null;
+  changeStyle(ultimoPorcento);
 
   valorConta.value = '';
   customTip.value = '';
