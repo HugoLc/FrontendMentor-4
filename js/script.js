@@ -219,4 +219,6 @@ function resetAll(){
 
   resultTip.innerText = '$0.00';
   resultTotal.innerText = '$0.00';
+
+  btReset.style.opacity = '0.2';
 }
