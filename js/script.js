@@ -15,7 +15,7 @@ var conta;
 var tip;
 var pessoas;
 
-let ultimoPorcento;
+let ultimoPorcento;/////////////////////////////arrumar
 
 valorConta.addEventListener('keypress', (evento) => {
   if (evento.key == 'Enter') {
@@ -193,7 +193,7 @@ function getTip(num, id){
 }
 
 function changeStyle(id){
-  if (id != customTip.id) {
+  if (id != null) {
     let botao = document.getElementById(id);
     botao.classList.toggle('bt-porcento-select');
   }
