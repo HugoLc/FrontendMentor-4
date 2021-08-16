@@ -228,23 +228,27 @@ function mudarResetButton(button, disabled){
     button.disabled = disabled;
     button.style.opacity = '1';
   }else { //desativar
-    button.disabled = disabled;
-    button.style.opacity = '0.7';
+    if (!conta && !tip && !pessoas) {
+      button.disabled = disabled;
+      button.style.opacity = '0.7';
+    }
+
   }
 }
 
 function resetAll(){
-  conta = null;
-  tip = null;
-  pessoas = null;
-  changeStyle(ultimoPorcento);
-
-  valorConta.value = '';
-  customTip.value = '';
-  qtdPessoas.value = '';
-
-  resultTip.innerText = '$0.00';
-  resultTotal.innerText = '$0.00';
-
-  btReset.style.opacity = '0.2';
+  // conta = null;
+  // tip = null;
+  // pessoas = null;
+  // changeStyle(ultimoPorcento);
+  //
+  // valorConta.value = '';
+  // customTip.value = '';
+  // qtdPessoas.value = '';
+  //
+  // resultTip.innerText = '$0.00';
+  // resultTotal.innerText = '$0.00';
+  //
+  // btReset.style.opacity = '0.2';
+  window.location.reload();
 }
