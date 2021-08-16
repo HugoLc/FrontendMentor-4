@@ -47,6 +47,23 @@ input{
   border-radius: 20px;
 }
 
+.input-container, .bt-porcento, .conta-input:hover{
+  cursor: pointer;
+}
+
+.input-container:hover{
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+.tb-custom:hover{
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+.bt-porcento:hover{
+  background: #9fe8df;
+  color: #00474b;
+}
+
 .preenchimento, .resultado{
   width: calc(50% - 25px);
 }
@@ -144,7 +161,7 @@ input{
 .bt-porcento-select{
   border: none;
   border-radius: 4px;
-  background: #9fe8df;
+  background: #26c2ad;
   color: hsl(183, 100%, 15%);
   font-weight: 700;
 }
@@ -298,6 +315,11 @@ footer{
     width: 100%;
     margin-top: 7%;
     font-size: 1.08em;
+  }
+
+  .bt-reset:hover{
+    background: #9fe8df;
+    cursor: pointer;
   }
 
   .valor-pagar {
