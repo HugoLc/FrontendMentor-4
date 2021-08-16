@@ -19,13 +19,14 @@ let ultimoPorcento;/////////////////////////////arrumar
 
 valorConta.addEventListener('keypress', (evento) => {
   if (evento.key == 'Enter') {
-    customTip.focus();
+    customTip.value ? btReset.focus() : customTip.focus();;
+
   }
 });
 
 customTip.addEventListener('keypress', (evento) =>{
   if (evento.key == 'Enter') {
-    qtdPessoas.focus();
+    qtdPessoas.value ? btReset.focus() : qtdPessoas.focus();
   }
 });
 
@@ -189,7 +190,9 @@ function getTip(num, id){
     mudarResetButton(btReset, true);
     console.log(tip);
   }
-  qtdPessoas.focus();
+
+  qtdPessoas.value ? btReset.focus() : qtdPessoas.focus();
+
 }
 
 function changeStyle(id){

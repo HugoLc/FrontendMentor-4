@@ -221,6 +221,11 @@ input{
   font-weight: bold;
 }
 
+.bt-reset:hover:enabled{
+  background: #9fe8df;
+  cursor: pointer;
+}
+
 .bt-reset:disabled{
   opacity: 0.5;
 }
@@ -317,14 +322,6 @@ footer{
     font-size: 1.08em;
   }
 
-  .bt-reset:hover{
-<<<<<<< HEAD
-    background: #9fe8df;
-=======
-    background: #9fe8df !important;
->>>>>>> 896f0c4f2278c2354210c813f255860cc6c85208
-    cursor: pointer;
-  }
 
   .valor-pagar {
     margin-bottom: 5%;
