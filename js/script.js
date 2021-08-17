@@ -48,8 +48,12 @@ function contaFocusOut(){
   var num = parseFloat(valorConta.value);
   num = num.toFixed(2);
   num = parseFloat(num);
-  if (num && num > 0) {
+  if (num && num > 0 && num <= 10000) {
     conta = num;
+    mudarResetButton(btReset, false);
+    valorConta.value = conta;
+  }else if (num > 10000) {
+    conta = 10000;
     mudarResetButton(btReset, false);
     valorConta.value = conta;
   }else if (num < 0) {
@@ -87,8 +91,14 @@ function customFocusOut(){
   customTip.placeholder = 'Custom';
   customTip.type = 'text';
   texto = customTip.value;
-  if (texto && texto > 0) {
+  if (texto && texto > 0 && texto <= 200) {
     tip = parseInt(texto);
+    ultimoPorcento = customTip.id;
+    texto = tip + '%';
+    mudarResetButton(btReset, false);
+    customTip.value = texto;
+  }else if (texto > 200) {
+    tip = 200;
     ultimoPorcento = customTip.id;
     texto = tip + '%';
     mudarResetButton(btReset, false);
@@ -124,8 +134,12 @@ function qtdPessoasOnFocus(){
 function qtdPessoasFocusOut(){
   retornarPadrao(qtdPessoas, zeroPessoas, false);
   qtdPessoas.placeholder = '0';
-  if (qtdPessoas.value && qtdPessoas.value > 0) {
+  if (qtdPessoas.value && qtdPessoas.value > 0 && qtdPessoas.value <= 500) {
     pessoas = parseInt(qtdPessoas.value);
+    mudarResetButton(btReset, false);
+    qtdPessoas.value = pessoas;
+  }else if (qtdPessoas.value > 500) {
+    pessoas = 500;
     mudarResetButton(btReset, false);
     qtdPessoas.value = pessoas;
   }else if (qtdPessoas.value < 0) {
