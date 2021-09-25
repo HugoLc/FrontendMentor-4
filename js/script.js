@@ -1,3 +1,21 @@
+import InfoCard from '../js/info-card.js'
+
+
+/* const infoCardParagrafo = `
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Nullam vehicula ultricies convallis. Orci varius natoque 
+    penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+    Quisque viverra dictum vestibulum. Fusce vitae erat ut metus 
+    mollis luctus id eget ante. Class aptent taciti sociosqu ad litora 
+    torquent per conubia nostra, per inceptos himenaeos.
+`
+const infoCard = new InfoCard(infoCardParagrafo);
+
+document.addEventListener('click', () => {
+    infoCard.excluirInfoCard();
+});
+ */
+
 const valorConta = document.getElementById('id-valor-conta');
 const customTip = document.getElementById('id-custom-tip');
 const qtdPessoas = document.getElementById('id-qtd-pessoas');
@@ -15,14 +33,21 @@ var conta;
 var tip;
 var pessoas;
 
-let ultimoPorcento;/////////////////////////////arrumar
+let ultimoPorcento;
 
+// Listeners
 valorConta.addEventListener('keypress', (evento) => {
   if (evento.key == 'Enter') {
     customTip.value ? btReset.focus() : customTip.focus();;
-
   }
 });
+valorConta.addEventListener('focus', () => {
+  contaOnFocus();
+});
+valorConta.addEventListener('focusout', () => {
+  contaFocusOut();
+});
+
 
 customTip.addEventListener('keypress', (evento) =>{
   if (evento.key == 'Enter') {
@@ -35,6 +60,8 @@ qtdPessoas.addEventListener('keypress', (evento)=>{
     btReset.focus();
   }
 })
+// Fim Listeners
+
 
 function contaOnFocus(){
   valorConta.placeholder = '';
@@ -251,18 +278,6 @@ function mudarResetButton(button, disabled){
 }
 
 function resetAll(){
-  // conta = null;
-  // tip = null;
-  // pessoas = null;
-  // changeStyle(ultimoPorcento);
-  //
-  // valorConta.value = '';
-  // customTip.value = '';
-  // qtdPessoas.value = '';
-  //
-  // resultTip.innerText = '$0.00';
-  // resultTotal.innerText = '$0.00';
-  //
-  // btReset.style.opacity = '0.2';
   window.location.reload();
 }
+

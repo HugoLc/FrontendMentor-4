@@ -1,0 +1,41 @@
+.info {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+}
+
+.info-card {
+    font-family: 'Source Sans Pro', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    max-width: 95%;
+    transform: translate(-50%, -50%);
+    background: #59536E;
+    border-radius: 10%;
+}
+
+.titulo-info-card {
+    color: white;
+    font-size: 35px;
+    margin: 1.5rem;
+    border-bottom: 1px solid white;
+    padding-bottom: 1rem;
+}
+
+.exit-info-card {
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+
+}
+
+.paragrafo-info-card {
+    font-size: 25px;
+    margin: 0 1.5rem 1.8rem;
+    color: white;
+    line-height: 1.8rem;
+}
