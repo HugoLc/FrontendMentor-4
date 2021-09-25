@@ -2,12 +2,15 @@ import InfoCard from '../js/info-card.js'
 
 
 const infoCardParagrafo = `
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    Nullam vehicula ultricies convallis. Orci varius natoque 
-    penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-    Quisque viverra dictum vestibulum. Fusce vitae erat ut metus 
-    mollis luctus id eget ante. Class aptent taciti sociosqu ad litora 
-    torquent per conubia nostra, per inceptos himenaeos.
+    Página criada atendendo as especificações do desafio proposto 
+    no site Frontend Mentor. Praticado posicionamento de elementos,
+    CSS grid e flex, manipulação do DOM utilizando javascript puro.
+    <br><br>
+    O objetivo do projeto é criar uma calculadora para exibir o valor por pessoa
+    da gorjeta de uma determinada conta, bem como o valor total por pessoa.
+    <br><br>
+    São inseridos os valores da conta, porcentagem de gorjeta desejada e quantidade
+    de pessoas que irão repartir.
 `;
 
 
