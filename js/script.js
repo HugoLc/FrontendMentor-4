@@ -1,22 +1,27 @@
 import InfoCard from '../js/info-card.js'
 
 
-/* const infoCardParagrafo = `
+const infoCardParagrafo = `
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     Nullam vehicula ultricies convallis. Orci varius natoque 
     penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
     Quisque viverra dictum vestibulum. Fusce vitae erat ut metus 
     mollis luctus id eget ante. Class aptent taciti sociosqu ad litora 
     torquent per conubia nostra, per inceptos himenaeos.
-`
-const infoCard = new InfoCard(infoCardParagrafo);
+`;
 
+
+
+var infoCard = new InfoCard(infoCardParagrafo);
 document.addEventListener('click', () => {
-    infoCard.excluirInfoCard();
+    if(infoCard) {infoCard.excluirInfoCard();}
+    infoCard = null;    
 });
- */
+
 
 const valorConta = document.getElementById('id-valor-conta');
+const botoesTipLista = document.getElementsByClassName('bt-porcento');
+console.log(botoesTipLista);
 const customTip = document.getElementById('id-custom-tip');
 const qtdPessoas = document.getElementById('id-qtd-pessoas');
 
@@ -48,18 +53,44 @@ valorConta.addEventListener('focusout', () => {
   contaFocusOut();
 });
 
+botoesTipListeners();
 
 customTip.addEventListener('keypress', (evento) =>{
   if (evento.key == 'Enter') {
     qtdPessoas.value ? btReset.focus() : qtdPessoas.focus();
   }
 });
+customTip.addEventListener('focus', () => {
+  customOnFocus();
+});
+customTip.addEventListener('focusout', () => {
+  customFocusOut();
+});
+
+
 
 qtdPessoas.addEventListener('keypress', (evento)=>{
   if (evento.key == 'Enter') {
     btReset.focus();
   }
 })
+qtdPessoas.addEventListener('focus', () => {
+  qtdPessoasOnFocus();
+});
+qtdPessoas.addEventListener('focusout', () => {
+  qtdPessoasFocusOut();
+});
+
+
+
+btReset.addEventListener('keypress', (evento)=>{
+  if (evento.key == 'Enter') {
+    resetAll();
+  }
+})
+btReset.addEventListener('click', () => {
+  resetAll();
+});
 // Fim Listeners
 
 
@@ -101,6 +132,20 @@ function contaFocusOut(){
   atualizarResultado(conta, tip, pessoas);
 }
 
+function botoesTipListeners(){
+  for (const element of botoesTipLista) {
+    let textoPorcentagem = element.dataset.porcentagem;
+    let intPorcentagem = parseInt(textoPorcentagem);
+
+    element.addEventListener('click', () => {
+      getTip(intPorcentagem, element.id);
+    })
+     element.addEventListener('enter', () => {
+      getTip(intPorcentagem, element.id);
+    })
+  }
+}
+
 function customOnFocus(){
   retornarPadrao(customTip, zeroTip, true, true);
   customTip.placeholder = '';
@@ -117,7 +162,7 @@ function customFocusOut(){
   retornarPadrao(customTip, zeroTip, false, true);
   customTip.placeholder = 'Custom';
   customTip.type = 'text';
-  texto = customTip.value;
+  let texto = customTip.value;
   if (texto && texto > 0 && texto <= 200) {
     tip = parseInt(texto);
     ultimoPorcento = customTip.id;
@@ -187,11 +232,6 @@ function qtdPessoasFocusOut(){
   atualizarResultado(conta, tip, pessoas);
 }
 
-function convertToInt(valor){
-  var num = valor;
-  num = parseInt(num);
-  return num;
-}
 
 function atualizarResultado(con, tip, pes){
   if (con && tip && pes) { //se nenhum der null
