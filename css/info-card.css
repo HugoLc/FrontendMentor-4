@@ -13,9 +13,11 @@
     left: 50%;
     width: 450px;
     max-width: 95%;
+    max-height: 95%;
     transform: translate(-50%, -50%);
     background: #59536E;
     border-radius: 10%;
+    padding-bottom: 1.5rem;
 }
 
 .titulo-info-card {
@@ -33,9 +35,28 @@
 
 }
 
+.container-paragrafo-info-card {
+    display: inline-block;
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
 .paragrafo-info-card {
     font-size: 25px;
     margin: 0 1.5rem 1.8rem;
     color: white;
     line-height: 1.8rem;
+}
+
+
+.container-paragrafo-info-card::-webkit-scrollbar {
+    width: 0;
+}
+
+.container-paragrafo-info-card::-webkit-scrollbar-track {
+    background: none;
+}
+
+.container-paragrafo-info-card::-webkit-scrollbar-thumb {
+    background-color: transparent;
 }

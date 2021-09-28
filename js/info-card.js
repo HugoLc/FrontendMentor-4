@@ -8,6 +8,7 @@ export default class InfoCard {
         fundo : 'info',
         card : 'info-card',
         titulo : 'titulo-info-card',
+        container : 'container-paragrafo-info-card',
         paragrafo : 'paragrafo-info-card',
         sair : 'exit-info-card' 
     }
@@ -25,9 +26,11 @@ export default class InfoCard {
                         <span>${this.#titulo}</span> 
                         <i class="fas fa-times ${this.#classesCSS.sair}"></i>
                     </h3>
-                    <p class="${this.#classesCSS.paragrafo}">
-                        ${this.#textoParagrafo}
-                    </p>
+                    <div class="${this.#classesCSS.container}">
+                        <p class="${this.#classesCSS.paragrafo}">
+                            ${this.#textoParagrafo}
+                        </p>
+                    </div>
                 </div>
             </div>
         `
